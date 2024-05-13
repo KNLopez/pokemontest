@@ -5,6 +5,10 @@
   margin-top: 20px;
   gap: 20px;
   height: 100%;
+}
+
+.download-area {
+  background-color: #101010;
   padding: 30px;
 }
 

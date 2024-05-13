@@ -1,5 +1,8 @@
 import axios from "axios";
 import { PaginationType, PokemonLink } from "./types";
+import { RefObject } from "react";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
 export const getPokemonPage = async ({
   url,
@@ -50,4 +53,32 @@ export const getPokemonDetail = async ({
   } catch (error) {
     console.log(error);
   }
+};
+export const downloadPokemonDetails = ({
+  ref,
+  name,
+  pokemonImage,
+}: {
+  ref: RefObject<HTMLDivElement>;
+  name: string;
+  pokemonImage: string;
+}) => {
+  const img = new Image();
+  img.onload = () => {
+    if (!ref.current) {
+      return;
+    }
+
+    html2canvas(ref.current, {
+      // options for testing
+      allowTaint: true,
+      useCORS: true,
+    }).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF();
+      pdf.addImage(imgData, "PNG", 0, 0, 210, 297);
+      pdf.save(`${name}.pdf`);
+    });
+  };
+  img.src = pokemonImage;
 };

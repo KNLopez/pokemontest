@@ -36,7 +36,6 @@ describe("Home Component", () => {
       </Router>
     );
 
-    // get input by name
     const input = screen.getByPlaceholderText(/Type in Ready!/i);
     expect(input).toBeInTheDocument();
 
@@ -44,7 +43,7 @@ describe("Home Component", () => {
     expect(errorMessage).not.toBeInTheDocument();
 
     input.focus();
-    //
+
     fireEvent.change(input, { target: { value: "Not Ready" } });
     input.blur();
 
