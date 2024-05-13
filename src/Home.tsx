@@ -16,23 +16,26 @@ function Home() {
   return (
     <div className="App">
       <div className="App-container">
-        <NavLink to="/pokedex">
-          <img
-            hidden={!isReady}
-            src="https://www.freeiconspng.com/uploads/file-pokeball-png-0.png"
-            className="App-logo"
-            alt="logo"
-            style={{ padding: "10px" }}
+        <div>
+          <NavLink to="/pokedex">
+            <img
+              hidden={!isReady}
+              src="https://www.freeiconspng.com/uploads/file-pokeball-png-0.png"
+              className="App-logo"
+              alt="logo"
+            />
+          </NavLink>
+          <p>Are you ready to be a pokemon master?</p>
+          <input
+            type="text"
+            name="name"
+            onChange={handleChange}
+            placeholder="Type in Ready!"
           />
-        </NavLink>
-        <p>Are you ready to be a pokemon master?</p>
-        <input
-          type="text"
-          name="name"
-          onChange={handleChange}
-          placeholder="Type in Ready!"
-        />
-        {showError && <span style={{ color: "red" }}>I am not ready yet!</span>}
+          {showError && (
+            <span style={{ color: "red" }}>I am not ready yet!</span>
+          )}
+        </div>
       </div>
     </div>
   );

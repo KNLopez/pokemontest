@@ -77,14 +77,16 @@ function PokeDex() {
           </>
         ) : (
           <>
-            <h1>Welcome to pokedex !</h1>
-            <input
-              type="text"
-              onKeyUp={handleKeyUp}
-              defaultValue={search}
-              placeholder="Search Pokemon"
-              className="search"
-            />
+            <div>
+              <h1>Welcome to pokedex !</h1>
+              <input
+                type="text"
+                onKeyUp={handleKeyUp}
+                defaultValue={search}
+                placeholder="Search Pokemon"
+                className="search"
+              />
+            </div>
             <div className="pokemon-list" data-testid="pokemon-list">
               {filteredPokemons.map((pokemon: PokemonLink) => (
                 <div

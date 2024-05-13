@@ -8,7 +8,6 @@
 
 .App-logo {
   height: 40vmin;
-  pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -22,6 +21,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
   font-size: calc(10px + 1vmin);
   color: white;
@@ -44,6 +44,7 @@
 
 input[type="text"] {
   width: 100%;
+  max-width: 480px;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
