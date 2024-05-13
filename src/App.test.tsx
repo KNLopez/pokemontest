@@ -23,12 +23,3 @@ test("renders Home component on root path", () => {
   );
   expect(screen.getByText(/Home/i)).toBeInTheDocument();
 });
-
-// test("redirects /pokedex to /pokedex/1", () => {
-//   render(
-//     <MemoryRouter initialEntries={["/pokedex"]}>
-//       <App />
-//     </MemoryRouter>
-//   );
-//   expect(window.location.pathname).toBe("/pokedex/1");
-// });
