@@ -39,7 +39,10 @@ describe("PokemonDetail Component", () => {
     render(<PokemonDetail url="some-url" onClose={mockOnClose} />);
     await waitFor(() => {
       expect(screen.getByTestId("pokemon-name")).toHaveTextContent("Pikachu");
-      expect(screen.getByAltText("")).toHaveAttribute("src", "pikachu.png");
+      expect(screen.getByAltText("Pikachu")).toHaveAttribute(
+        "src",
+        "pikachu.png"
+      );
     });
   });
 
@@ -87,5 +90,19 @@ describe("PokemonDetail Component", () => {
   it("does not fetch details when URL is null", () => {
     render(<PokemonDetail url={""} onClose={mockOnClose} />);
     expect(getPokemonDetail).not.toHaveBeenCalled();
+  });
+
+  it("downloads pokemon details as PDF", async () => {
+    mockedGetPokemonDetail.mockImplementation(
+      ({ setPokemonDetail, setIsLoading }) => {
+        setIsLoading(false);
+        setPokemonDetail(basePokemonDetail);
+      }
+    );
+    render(<PokemonDetail url="some-url" onClose={mockOnClose} />);
+    await waitFor(() => {
+      fireEvent.click(screen.getByText("Download"));
+      expect(mockOnClose).not.toHaveBeenCalled();
+    });
   });
 });
