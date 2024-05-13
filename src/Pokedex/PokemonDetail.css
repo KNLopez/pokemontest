@@ -1,0 +1,63 @@
+.pokemon-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  gap: 20px;
+  height: 100%;
+  padding: 30px;
+}
+
+.pokemon-profile {
+  text-align: center;
+}
+
+.pokemon-detail img {
+  width: 200px;
+  height: 200px;
+}
+
+.pokemon-detail h2 {
+  margin-top: -5px;
+  margin-bottom: 20px;
+}
+
+.pokemon-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat-name {
+  font-weight: bold;
+  min-width: 100px;
+}
+
+.stat-bar {
+  min-width: 150px;
+}
+
+.pokemon-stat {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.pokemon-stat div {
+  flex: 1;
+}
+
+.download-button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #138132;
+  color: white;
+  border: none;
+}

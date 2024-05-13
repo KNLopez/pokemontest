@@ -1,0 +1,28 @@
+.pokemon-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pokemon {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.pokemon:hover {
+  background-color: #ebff91;
+  color: black;
+  transition: background-color 0.5s, color 0.5s, scale 0.5s;
+  scale: 1.1;
+}
+
+.search {
+  max-width: 480px;
+}
